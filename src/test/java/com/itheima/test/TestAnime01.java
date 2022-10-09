@@ -6,6 +6,8 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import javax.crypto.ExemptionMechanismException;
+
 /**
  * Description ==> TODO
  * BelongsProject ==> spring_first_aop_ioc
@@ -20,12 +22,23 @@ public class TestAnime01 {
     @Autowired
     private AnimeTest01 animeTest01;
 
+    private AnnotationConfigApplicationContext ac;
+
+
+    @Test
+    public void testAno03(){
+
+        AnimeTest01 bean = ac.getBean(AnimeTest01.class);
+
+        bean.testPrint();
+
+
+    }
+
     @Test
     public void testAno02(){
 
         animeTest01.testPrint();
-
-
 
     }
 
