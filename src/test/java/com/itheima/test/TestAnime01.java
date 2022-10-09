@@ -3,6 +3,7 @@ package com.itheima.test;
 import com.itheima.config.SpringConfig;
 import com.itheima.service.AnimeTest01;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -15,6 +16,19 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class TestAnime01 {
 
+
+    @Autowired
+    private AnimeTest01 animeTest01;
+
+    @Test
+    public void testAno02(){
+
+        animeTest01.testPrint();
+
+
+
+    }
+
     @Test
     public void testAno01(){
 
@@ -23,7 +37,6 @@ public class TestAnime01 {
         AnimeTest01 bean = ac.getBean(AnimeTest01.class);
 
         bean.testPrint();
-
 
     }
 
